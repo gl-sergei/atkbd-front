@@ -1,0 +1,20 @@
+Source: atkbd-front
+Section: unknown
+Priority: extra
+Maintainer: Sergei Gluschenko <gl.sergei@gmail.com>
+Build-Depends: debhelper (>= 7), bzip2
+Standards-Version: 3.8.3
+Homepage: https://github.com/qoyllur/atkbd-front
+
+Package: atkbd-front-utils
+Architecture: any
+Depends: bash
+Description: This package adds support for Shtrih-M FRONT MSR reader
+
+Package: atkbd-front-source
+Architecture: all
+Depends: module-assistant, debhelper (>= 7), make, bzip2
+Description: source for the atkbd-front driver.
+ This package provides the source code for the atkbd-front kernel modules.
+ The atkbd-front package is also required in order to make use of these
+ modules. Kernel source or headers are required to compile these modules.

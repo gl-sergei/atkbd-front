@@ -1,0 +1,20 @@
+Source: atkbd-front
+Section: unknown
+Priority: optional
+Maintainer: Sergei Gluschenko <gl.sergei@gmail.com>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.3
+
+Package: atkbd-front-modules-_KVERS_
+Architecture: any
+Provides: atkbd-front-modules
+Description: atkbd-front modules for Linux (kernel _KVERS_).
+ This package contains the set of loadable kernel modules for the
+ Shtrih-M PS/2 MSR reader.
+ .
+ This package contains the compiled kernel modules for _KVERS_
+ .
+ If you have compiled your own kernel, you will most likely need to build
+ your own atkbd-front-modules. The atkbd-front-source package has been
+ provided for use with the Debian's module-assistant or kernel-package
+ utilities to produce a version of atkbd-front-modules for your kernel.

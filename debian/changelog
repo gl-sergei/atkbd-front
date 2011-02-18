@@ -1,0 +1,5 @@
+atkbd-front (0.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Sergei Gluschenko <gl.sergei@gmail.com>  Sat, 19 Feb 2011 01:35:58 +0600

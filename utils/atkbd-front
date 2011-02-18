@@ -1,0 +1,45 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides: atkbd-front
+# Required-Start:    $local_fs $syslog $remote_fs dbus
+# Required-Stop:     $local_fs $syslog $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start atkbd-front
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+set -e
+
+case "$1" in
+  start)
+    #currently this init script exists only because of what appears to be
+    #an egg and chicken problem
+    #  bluetoothd normally starts up by udev rules.  it needs dbus to function,
+    #  but dbus doesn't start up until after udev finishes triggering
+    #
+    /sbin/modprobe atkbd-front
+    echo -n atkbd-front >/sys/bus/serio/devices/serio0/drvctl
+    ;;
+  stop)
+     echo -n atkbd >/sys/bus/serio/devices/serio0/drvctl
+     /sbin/rmmod atkbd-front
+    ;;
+  restart|force-reload)
+    $0 stop
+    $0 start
+    ;;
+  status)
+    exit 0
+    ;;
+  *)
+    N=/etc/init.d/atkbd-front
+    # echo "Usage: $N {start|stop|restart|reload|force-reload|status}" >&2
+    echo "Usage: $N {start|stop|restart|force-reload|status}" >&2
+    exit 1
+    ;;
+esac
+
+exit 0
+
