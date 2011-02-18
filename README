@@ -1,0 +1,15 @@
+Compiling and installing ubuntu package:
+
+git clone git://github.com/qoyllur/atkbd-front.git
+cd atkbd-front
+dpkg-buildpackage -rfakeroot
+cd ..
+sudo dkpg -i atkbd-front-source*deb
+mkdir tmp
+m-a -u test build atkbd-front-source
+
+Then install atkbd-front-utils and atkbd-front-modules.
+
+Usage:
+/etc/init.d/atkbd-front start|stop
+
